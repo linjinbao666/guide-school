@@ -1,27 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
+
 const { TabPane } = Tabs;
 const { Text } = Typography;
 
-
 const App = () => {
-  // 创建坐标数组
-  const coordinates = [];
-  for (let row = 0; row < 24; row++) {
-    for (let col = 0; col < 12; col++) {
-      coordinates.push({ row, col });
-    }
-  }
-
-  // 定义包含地图图标信息的数组
-  const mapIconCells = [
-    { row: 2, col: 4, title: '标题1', text: 'Some Text', images: ['/images/3.jpg'], audio: '', video: 'a.mp4' },
-    { row: 5, col: 9, title: '标题2', text: 'Some Text2', images: ['a.jpg'], audio: '', video: 'b.mp4' },
-    { row: 10, col: 2, title: '标题3', text: 'Some Text3', images: ['a.jpg'], audio: '', video: 'c.mp4' },
-  ];
 
   const [dialogTitle, setDialogTitle] = useState('');
   const [dialogText, setDialogText] = useState(null);
@@ -31,14 +17,35 @@ const App = () => {
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
 
+  const [mapIconCells, setMapIconCells] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/alldata.json'); // 根据实际的 JSON 文件路径进行修改
+        const data = await response.json();
+        setMapIconCells(data);
+      } catch (error) {
+        console.error('Error fetching JSON data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // 创建坐标数组
+  const coordinates = [];
+  for (let row = 0; row < 24; row++) {
+    for (let col = 0; col < 12; col++) {
+      coordinates.push({ row, col });
+    }
+  }
+
   const handleGridCellClick = (title, text, images, audio, video) => {
     setDialogTitle(title);
     setDialogText(text);
-    console.log(text);
     setDialogImages(images);
-    console.log(images)
     setDialogaudio(audio);
-    console.log(audio)
     setDialogvideo(video);
     setDialogVisible(true);
   };
