@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import Dialog from './Dialog';
 
 const App = () => {
   // 创建坐标数组
@@ -19,19 +20,41 @@ const App = () => {
     { row: 10, col: 2, content: 'video.mp4' },
   ];
 
+  const [dialogContent, setDialogContent] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  // 点击小方格图标时弹出对话框
+  const handleGridCellClick = (content) => {
+    setDialogContent(content);
+    setDialogOpen(true);
+  };
+
+  // 关闭对话框
+  const closeDialog = () => {
+    setDialogContent(null);
+    setDialogOpen(false);
+  };
+
   return (
     <div className="container">
       <div className="background-image"></div>
       <div className="grid-container">
         {/* 循环渲染小方格 */}
         {coordinates.map((coord, index) => {
-          const isMapIconCell = mapIconCells.some(
+          const mapIconCell = mapIconCells.find(
             cell => cell.row === coord.row && cell.col === coord.col
           );
+          const isMapIconCell = !!mapIconCell;
+          const content = isMapIconCell ? mapIconCell.content : null;
           return (
             <div className="grid-cell" key={index}>
               {isMapIconCell ? (
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
+                <div
+                  className="grid-icon"
+                  onClick={() => handleGridCellClick(content)}
+                >
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
+                </div>
+
               ) : null}
               <span className="coord-x">{coord.col}</span>
               <span className="coord-y">{coord.row}</span>
@@ -39,6 +62,11 @@ const App = () => {
           );
         })}
       </div>
+
+      {/* 对话框 */}
+      {dialogContent !== null && (
+        <Dialog content={dialogContent} onClose={closeDialog} />
+      )}
     </div>
   );
 }
