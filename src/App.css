@@ -67,3 +67,15 @@
   color: #ff0000; /* Set the icon color to red */
   font-size: 20px; /* Set the icon size */
 }
+
+.carousel-image {
+  width: 100%; /* 设置容器宽度，根据实际情况调整 */
+  height: 300px; /* 设置容器高度，根据实际情况调整 */
+  overflow: hidden; /* 隐藏超出容器尺寸的内容 */
+}
+
+.carousel-image img {
+  width: 100%; /* 图片宽度设置为100%，自动适应容器宽度 */
+  height: auto; /* 图片高度自适应，保持宽高比例 */
+  object-fit: contain; /* 控制图片在容器中的填充方式，可以根据需求使用其他值，如 cover 或 fill */
+}
