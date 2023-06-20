@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import Dialog from './Dialog';
 
 const App = () => {
   // 创建坐标数组
@@ -15,24 +14,12 @@ const App = () => {
 
   // 定义包含地图图标信息的数组
   const mapIconCells = [
-    { row: 2, col: 4, content: 'Some text' },
-    { row: 5, col: 9, content: ['image1.jpg', 'image2.jpg'] },
-    { row: 10, col: 2, content: 'video.mp4' },
+    { row: 2, col: 4, title: '标题1', content: 'Some text' },
+    { row: 5, col: 9, title: '标题2',content: ['image1.jpg', 'image2.jpg'] },
+    { row: 10, col: 2, title: '标题3', content: 'video.mp4' },
   ];
 
-  const [dialogContent, setDialogContent] = useState(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  // 点击小方格图标时弹出对话框
-  const handleGridCellClick = (content) => {
-    setDialogContent(content);
-    setDialogOpen(true);
-  };
-
-  // 关闭对话框
-  const closeDialog = () => {
-    setDialogContent(null);
-    setDialogOpen(false);
-  };
+  
 
   return (
     <div className="container">
@@ -50,7 +37,7 @@ const App = () => {
               {isMapIconCell ? (
                 <div
                   className="grid-icon"
-                  onClick={() => handleGridCellClick(content)}
+                  
                 >
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
                 </div>
@@ -62,11 +49,6 @@ const App = () => {
           );
         })}
       </div>
-
-      {/* 对话框 */}
-      {dialogContent !== null && (
-        <Dialog content={dialogContent} onClose={closeDialog} />
-      )}
     </div>
   );
 }
