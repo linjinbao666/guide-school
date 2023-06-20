@@ -1,65 +1,69 @@
-.App {
-  text-align: center;
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
-  background-color: white;
-  border: 1px solid gray;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  text-align: center;
-}
-
-.close-button {
+.background-image {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('map.jpg'); /* 替换为你的图片URL */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  z-index: -1; /* 将背景图片放在最底层 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  /* 在手机端的样式 */
+  .container {
+    background-size: 100% auto; 
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(24, 1fr);
+  gap: 1px; /* 可选：用于添加小间隔 */
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.grid-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* 设置为透明 */
+  border: 0.3px solid rgb(179, 0, 255); /* 添加红色边框线 */
+}
+
+.coord-x,
+.coord-y {
+  position: absolute;
+  color: #000000;
+  font-size: 3px;
+}
+
+.coord-x {
+  top: 2px;
+  left: 2px;
+}
+
+.coord-y {
+  bottom: 2px;
+  right: 2px;
+}
+
+.map-icon {
+  color: #ff0000; /* Set the icon color to red */
+  font-size: 20px; /* Set the icon size */
 }
