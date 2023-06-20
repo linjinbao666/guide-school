@@ -20,14 +20,30 @@ const App = () => {
   const [mapIconCells, setMapIconCells] = useState([]);
 
   useEffect(() => {
+    const directory = '/assets';
+
     const fetchData = async () => {
-      try {
-        const response = await fetch('/alldata.json'); // 根据实际的 JSON 文件路径进行修改
-        const data = await response.json();
-        setMapIconCells(data);
-      } catch (error) {
-        console.error('Error fetching JSON data:', error);
+      const dataPromises = [];
+
+      // 遍历目录下的文件夹
+      for (let i = 1; i <= 36; i++) {
+        const folderPath = `${directory}/${i}`;
+        const dataFilePath = `${folderPath}/data.json`;
+
+        // 读取每个目录中的data.json文件
+        const dataPromise = fetch(dataFilePath).then((response) => response.json());
+        dataPromises.push(dataPromise);
       }
+
+      // 等待所有data.json文件的读取完成
+      const jsonDataArray = await Promise.all(dataPromises);
+
+      // 将所有data.json文件的内容合并成一个数组
+      const mergedData = jsonDataArray.reduce((result, jsonData) => {
+        return result.concat(jsonData);
+      }, []);
+
+      setMapIconCells(mergedData);
     };
 
     fetchData();
@@ -89,8 +105,8 @@ const App = () => {
                 </div>
 
               ) : null}
-              <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span>
+              {/* <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span> */}
             </div>
           );
         })}

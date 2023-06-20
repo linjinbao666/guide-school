@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   background-color: transparent; /* 设置为透明 */
-  border: 0.3px solid rgb(179, 0, 255); /* 添加红色边框线 */
+  /* border: 0.3px solid rgb(179, 0, 255);  */
 }
 
 .coord-x,
