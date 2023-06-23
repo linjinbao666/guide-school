@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
+import { FaPlay, FaPause} from 'react-icons/fa';
 
 const { TabPane } = Tabs;
 const { Text } = Typography;
@@ -18,6 +19,21 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('text');
 
   const [mapIconCells, setMapIconCells] = useState([]);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const handlePlayClick = () => {
+    const audioElement = audioRef.current;
+
+    if (isPlaying) {
+      audioElement.pause();
+    } else {
+      audioElement.play();
+    }
+
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     const directory = '/assets';
@@ -93,6 +109,7 @@ const App = () => {
           const text = isMapIconCell ? mapIconCell.text : null;
           const images = isMapIconCell ? mapIconCell.images : null;
           const audio = isMapIconCell ? mapIconCell.audio : null;
+          console.log(audio);
           const video = isMapIconCell ? mapIconCell.video : null;
           return (
             <div className="grid-cell" key={index}>
@@ -133,7 +150,7 @@ const App = () => {
             </div>
           </TabPane>
           <TabPane tab="图片" key="image">
-            <Carousel autoplay>
+            <Carousel autoplay={false}>
               {dialogImages && dialogImages.map((image, index) => (
                 <div key={index}>
                   <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
@@ -142,7 +159,14 @@ const App = () => {
             </Carousel>
           </TabPane>
           <TabPane tab="音频" key="audio">
-            <audio src={dialogaudio} controls width="100%" />
+            <div className="audio-player">
+              {isPlaying ? (
+                <FaPause className="play-icon" onClick={handlePlayClick} />
+              ) : (
+                <FaPlay className="play-icon" onClick={handlePlayClick} />
+              )}
+              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+            </div>
           </TabPane>
           <TabPane tab="视频" key="video">
             <video src={dialogvideo} controls width="100%" />

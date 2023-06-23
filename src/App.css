@@ -109,3 +109,16 @@
 .text-container::first-letter {
   text-indent: 0;
 }
+
+.audio-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh; /* 或适当的高度，根据需要调整 */
+}
+
+.play-icon {
+  font-size: 48px; /* 根据需要调整图标的大小 */
+  color: #000; /* 根据需要调整图标的颜色 */
+  cursor: pointer;
+}
