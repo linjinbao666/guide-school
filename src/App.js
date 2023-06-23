@@ -125,10 +125,10 @@ const App = () => {
           onChange={handleTabChange}
           centered
           style={{ height: '400px' }} >
-          <TabPane tab="Text" key="text">
+          <TabPane tab="文字" key="text">
             <Text>{dialogText}</Text>
           </TabPane>
-          <TabPane tab="Image" key="image">
+          <TabPane tab="图片" key="image">
             <Carousel autoplay>
               {dialogImages && dialogImages.map((image, index) => (
                 <div key={index}>
@@ -137,10 +137,10 @@ const App = () => {
               ))}
             </Carousel>
           </TabPane>
-          <TabPane tab="Audio" key="audio">
+          <TabPane tab="音频" key="audio">
             <audio src={dialogaudio} controls width="100%" />
           </TabPane>
-          <TabPane tab="Video" key="video">
+          <TabPane tab="视频" key="video">
             <video src={dialogvideo} controls width="100%" />
           </TabPane>
 
