@@ -21,8 +21,11 @@
 }
 
 @media (max-width: 768px) {
+  
   /* 在手机端的样式 */
   .container {
+    max-width: 480px;
+    margin: 0 auto;
     background-size: 100% auto; 
   }
 }
