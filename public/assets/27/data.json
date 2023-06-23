@@ -4,7 +4,11 @@
     "col": 6,
     "title": "综合楼",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/27/图片167.jpg",
+        "/assets/27/图片166.jpg",
+        "/assets/27/图片165.jpg"
+    ],
     "audio": "",
     "video": ""
 }

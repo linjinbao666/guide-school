@@ -4,7 +4,11 @@
     "col": 5,
     "title": "反恐训练场",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/13/图片101.jpg",
+        "/assets/13/图片100.jpg",
+        "/assets/13/图片99.jpg"
+    ],
     "audio": "",
     "video": ""
 }

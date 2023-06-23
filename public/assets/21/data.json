@@ -4,7 +4,11 @@
     "col": 4,
     "title": "教师公寓",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/21/图片138.jpg",
+        "/assets/21/图片139.jpg",
+        "/assets/21/图片137.jpg"
+    ],
     "audio": "",
     "video": ""
 }

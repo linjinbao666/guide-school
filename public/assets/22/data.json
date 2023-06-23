@@ -4,7 +4,12 @@
     "col": 4,
     "title": "学生公寓",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/22/图片140.jpg",
+        "/assets/22/图片141.jpg",
+        "/assets/22/图片143.jpg",
+        "/assets/22/图片142.jpg"
+    ],
     "audio": "",
     "video": ""
 }

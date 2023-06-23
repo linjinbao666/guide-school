@@ -4,7 +4,12 @@
     "col": "",
     "title": "大学生综合服务中心",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/16/图片116.jpg",
+        "/assets/16/图片115.jpg",
+        "/assets/16/图片114.jpg",
+        "/assets/16/图片113.jpg"
+    ],
     "audio": "",
     "video": ""
 }

@@ -4,7 +4,13 @@
     "col": 5,
     "title": "篮球场",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/12/图片97.jpg",
+        "/assets/12/图片96.jpg",
+        "/assets/12/图片94.jpg",
+        "/assets/12/图片95.jpg",
+        "/assets/12/图片98.jpg"
+    ],
     "audio": "",
     "video": ""
 }

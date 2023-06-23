@@ -4,7 +4,14 @@
     "col": 8,
     "title": "泅渡馆",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/10/图片83.jpg",
+        "/assets/10/图片82.jpg",
+        "/assets/10/图片85.jpg",
+        "/assets/10/图片84.jpg",
+        "/assets/10/图片86.jpg",
+        "/assets/10/图片87.jpg"
+    ],
     "audio": "",
     "video": ""
 }

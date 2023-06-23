@@ -4,7 +4,12 @@
     "col": "",
     "title": "科研楼",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/29/图片175.jpg",
+        "/assets/29/图片174.jpg",
+        "/assets/29/图片173.jpg",
+        "/assets/29/图片172.jpg"
+    ],
     "audio": "",
     "video": ""
 }

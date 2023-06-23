@@ -4,7 +4,11 @@
     "col": "",
     "title": "保健科/保卫处",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/33/图片189.jpg",
+        "/assets/33/图片191.jpg",
+        "/assets/33/图片190.jpg"
+    ],
     "audio": "",
     "video": ""
 }

@@ -4,7 +4,13 @@
     "col": 7,
     "title": "人工湖",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/23/图片148.jpg",
+        "/assets/23/图片146.png",
+        "/assets/23/图片147.png",
+        "/assets/23/图片145.png",
+        "/assets/23/图片144.jpg"
+    ],
     "audio": "",
     "video": ""
 }

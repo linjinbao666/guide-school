@@ -4,7 +4,14 @@
     "col": 8,
     "title": "战术训练场/多旋翼警用无人机实训场",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/14/图片102.jpg",
+        "/assets/14/图片103.jpg",
+        "/assets/14/图片104.jpg",
+        "/assets/14/图片105.jpg",
+        "/assets/14/图片107.jpg",
+        "/assets/14/图片106.jpg"
+    ],
     "audio": "",
     "video": ""
 }

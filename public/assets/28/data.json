@@ -4,7 +4,12 @@
     "col": 7,
     "title": "图书馆",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/28/图片170.jpg",
+        "/assets/28/图片171.jpg",
+        "/assets/28/图片168.jpg",
+        "/assets/28/图片169.jpg"
+    ],
     "audio": "",
     "video": ""
 }
