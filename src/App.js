@@ -126,7 +126,11 @@ const App = () => {
           centered
           style={{ height: '400px' }} >
           <TabPane tab="文字" key="text">
-            <Text>{dialogText}</Text>
+            <div className="scrollable-content">
+              <Text>
+                <div className="text-container">{dialogText}</div>
+              </Text>
+            </div>
           </TabPane>
           <TabPane tab="图片" key="image">
             <Carousel autoplay>
