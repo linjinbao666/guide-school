@@ -4,7 +4,15 @@
     "col": 4,
     "title": "学生食堂",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/17/图片118.gif",
+        "/assets/17/图片117.jpg",
+        "/assets/17/图片123.jpg",
+        "/assets/17/图片122.jpg",
+        "/assets/17/图片120.jpg",
+        "/assets/17/图片121.jpg",
+        "/assets/17/图片119.jpg"
+    ],
     "audio": "",
     "video": ""
 }

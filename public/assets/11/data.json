@@ -4,7 +4,14 @@
     "col": 7,
     "title": "田径场",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/11/图片91.jpg",
+        "/assets/11/图片90.jpg",
+        "/assets/11/图片92.jpg",
+        "/assets/11/图片93.jpg",
+        "/assets/11/图片89.jpg",
+        "/assets/11/图片88.jpg"
+    ],
     "audio": "",
     "video": ""
 }

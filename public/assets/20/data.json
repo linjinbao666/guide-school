@@ -4,7 +4,12 @@
     "col": 3,
     "title": "学员医院",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/20/图片136.jpg",
+        "/assets/20/图片134.jpg",
+        "/assets/20/图片135.jpg",
+        "/assets/20/图片133.jpg"
+    ],
     "audio": "",
     "video": ""
 }

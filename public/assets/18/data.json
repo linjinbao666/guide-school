@@ -4,7 +4,12 @@
     "col": 9,
     "title": "山东警察学院警务室·平安山警工作站",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/18/图片125.jpg",
+        "/assets/18/图片124.jpg",
+        "/assets/18/图片126.jpg",
+        "/assets/18/图片127.jpg"
+    ],
     "audio": "",
     "video": ""
 }

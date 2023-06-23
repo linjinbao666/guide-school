@@ -4,7 +4,12 @@
     "col": 8,
     "title": "文东校区大门（北门）",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/25/图片158.jpg",
+        "/assets/25/图片159.jpg",
+        "/assets/25/图片157.jpg",
+        "/assets/25/图片156.jpg"
+    ],
     "audio": "",
     "video": ""
 }

@@ -4,7 +4,13 @@
     "col": 4,
     "title": "综合服务楼",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/15/图片110.jpg",
+        "/assets/15/图片111.jpg",
+        "/assets/15/图片112.jpg",
+        "/assets/15/图片108.jpg",
+        "/assets/15/图片109.jpg"
+    ],
     "audio": "",
     "video": ""
 }

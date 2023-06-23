@@ -4,7 +4,12 @@
     "col": 6,
     "title": "下沉靶场",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/8/图片75.jpg",
+        "/assets/8/图片74.jpg",
+        "/assets/8/图片76.jpg",
+        "/assets/8/图片77.jpg"
+    ],
     "audio": "",
     "video": ""
 }

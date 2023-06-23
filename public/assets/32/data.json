@@ -1,10 +1,15 @@
 {
-    "id":32,
+    "id": 32,
     "row": 13,
     "col": 4,
     "title": "2号学员餐厅/老干部活动中心",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/32/图片188.jpg",
+        "/assets/32/图片185.jpg",
+        "/assets/32/图片186.jpg",
+        "/assets/32/图片187.jpg"
+    ],
     "audio": "",
     "video": ""
 }

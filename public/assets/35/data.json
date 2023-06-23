@@ -4,7 +4,11 @@
     "col": 3,
     "title": "学员公寓2",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/35/图片198.jpg",
+        "/assets/35/图片199.jpg",
+        "/assets/35/图片197.jpg"
+    ],
     "audio": "",
     "video": ""
 }

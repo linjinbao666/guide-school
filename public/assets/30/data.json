@@ -4,7 +4,12 @@
     "col": "",
     "title": "警训馆（健身中心）",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/30/图片176.jpg",
+        "/assets/30/图片177.jpg",
+        "/assets/30/图片179.jpg",
+        "/assets/30/图片178.jpg"
+    ],
     "audio": "",
     "video": ""
 }

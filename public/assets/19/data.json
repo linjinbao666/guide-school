@@ -4,7 +4,13 @@
     "col": 2,
     "title": "后勤服务楼",
     "text": "",
-    "images": [],
+    "images": [
+        "/assets/19/图片129.jpg",
+        "/assets/19/图片128.jpg",
+        "/assets/19/图片131.jpg",
+        "/assets/19/图片130.jpg",
+        "/assets/19/图片132.jpg"
+    ],
     "audio": "",
     "video": ""
 }
