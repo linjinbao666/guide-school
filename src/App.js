@@ -3,7 +3,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
-import { FaPlay, FaPause} from 'react-icons/fa';
+import { FaPlay, FaPause } from 'react-icons/fa';
 
 const { TabPane } = Tabs;
 const { Text } = Typography;
@@ -22,6 +22,8 @@ const App = () => {
 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
+  const [isVideoPlaying, setVideoIsPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   const handlePlayClick = () => {
     const audioElement = audioRef.current;
@@ -33,6 +35,18 @@ const App = () => {
     }
 
     setIsPlaying(!isPlaying);
+  };
+
+  const handleVideoClick = () => {
+    const videoElement = videoRef.current;
+
+    if (isVideoPlaying) {
+      videoElement.pause();
+    } else {
+      videoElement.play();
+    }
+
+    setVideoIsPlaying(!isVideoPlaying);
   };
 
   useEffect(() => {
@@ -109,7 +123,6 @@ const App = () => {
           const text = isMapIconCell ? mapIconCell.text : null;
           const images = isMapIconCell ? mapIconCell.images : null;
           const audio = isMapIconCell ? mapIconCell.audio : null;
-          console.log(audio);
           const video = isMapIconCell ? mapIconCell.video : null;
           return (
             <div className="grid-cell" key={index}>
@@ -169,7 +182,11 @@ const App = () => {
             </div>
           </TabPane>
           <TabPane tab="视频" key="video">
-            <video src={dialogvideo} controls width="100%" />
+            <div className="video-player" onClick={handleVideoClick}>
+              <video ref={videoRef} className="video-element" controls={false}>
+                <source src={dialogvideo} type="video/mp4" />
+              </video>
+            </div>
           </TabPane>
 
         </Tabs>
