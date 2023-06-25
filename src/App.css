@@ -28,6 +28,9 @@
     margin: 0 auto;
     background-size: 100% auto; 
   }
+  body {
+    background-color: #000000;
+  }
 }
 
 .grid-container {
