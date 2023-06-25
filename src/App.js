@@ -86,6 +86,10 @@ const App = () => {
         audioRef.current.pause();
         setIsPlaying(false);
       }
+      if (isVideoPlaying) {
+       videoRef.current.pause();
+       setVideoIsPlaying(false);
+      }
     };
   }, []);
 
@@ -119,6 +123,11 @@ const App = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     }
+
+    if (isVideoPlaying) {
+      videoRef.current.pause();
+      setVideoIsPlaying(false);
+    }
   };
 
   const handleTabChange = (key) => {
@@ -127,6 +136,11 @@ const App = () => {
     if (key !== "audio" && isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
+    }
+
+    if (key !== "video" && isVideoPlaying) {
+      videoRef.current.pause();
+      setVideoIsPlaying(false);
     }
   };
 
@@ -175,7 +189,7 @@ const App = () => {
           tabBarStyle={{ justifyContent: 'center' }}
           onChange={handleTabChange}
           centered
-          style={{ height: '400px' }} >
+          style={{ height: '460px' }} >
           <TabPane tab="文字" key="text">
             <div className="scrollable-content">
               <Text>
