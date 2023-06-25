@@ -79,6 +79,16 @@ const App = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    // 在组件卸载时停止音频播放
+    return () => {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+  }, []);
+
   // 创建坐标数组
   const coordinates = [];
   for (let row = 0; row < 24; row++) {
@@ -103,10 +113,21 @@ const App = () => {
     setDialogaudio(null);
     setDialogvideo(null);
     setDialogVisible(false);
+
+    // 关闭弹窗时暂停播放
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
   };
 
   const handleTabChange = (key) => {
     setActiveTab(key);
+
+    if (key !== "audio" && isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
   };
 
   return (
