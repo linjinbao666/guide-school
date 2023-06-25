@@ -143,3 +143,9 @@
   width: 100%;
   height: 100%;
 }
+
+.custom-carousel .slick-dots li button {
+  background-color: #f90404; /* 设置面板指示点的背景颜色 */
+  width: 15px; /* 设置面板指示点的宽度 */
+  height: 10px; /* 设置面板指示点的高度 */
+}
