@@ -3,7 +3,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
-import { FaPlay, FaPause } from 'react-icons/fa';
+import audioImage from './audio.png';
 
 const { TabPane } = Tabs;
 const { Text } = Typography;
@@ -87,8 +87,8 @@ const App = () => {
         setIsPlaying(false);
       }
       if (isVideoPlaying) {
-       videoRef.current.pause();
-       setVideoIsPlaying(false);
+        videoRef.current.pause();
+        setVideoIsPlaying(false);
       }
     };
   }, []);
@@ -209,9 +209,19 @@ const App = () => {
           <TabPane tab="音频" key="audio">
             <div className="audio-player">
               {isPlaying ? (
-                <FaPause className="play-icon" onClick={handlePlayClick} />
+                <img
+                  className="play-icon"
+                  src={audioImage}
+                  alt="Pause"
+                  onClick={handlePlayClick}
+                />
               ) : (
-                <FaPlay className="play-icon" onClick={handlePlayClick} />
+                <img
+                  className="play-icon"
+                  src={audioImage}
+                  alt="Play"
+                  onClick={handlePlayClick}
+                />
               )}
               <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
             </div>
