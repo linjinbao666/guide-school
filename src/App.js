@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { Modal, Tabs, Typography, Carousel, Divider } from 'antd';
+import { Modal, Tabs, Typography, Carousel } from 'antd';
 import audioImage from './audio.png';
 
 const { TabPane } = Tabs;
@@ -181,6 +181,8 @@ const App = () => {
         onCancel={closeDialog}
         footer={null}
         centered
+        className="my-modal"
+        maskStyle={{ backdropFilter: 'blur(8px)' }}
       >
         <Tabs
           type="card"
@@ -188,7 +190,7 @@ const App = () => {
           tabBarStyle={{ justifyContent: 'center' }}
           onChange={handleTabChange}
           centered
-          style={{ height: '460px' }} >
+          style={{ height: '380px' }} >
           <TabPane tab="文字" key="text">
             <div className="scrollable-content">
               <Text>
