@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import { Modal, Tabs, Typography, Carousel } from 'antd';
+import { Modal, Tabs, Typography, Carousel, Divider } from 'antd';
 import audioImage from './audio.png';
 
 const { TabPane } = Tabs;
@@ -26,15 +26,14 @@ const App = () => {
   const videoRef = useRef(null);
 
   const handlePlayClick = () => {
-    const audioElement = audioRef.current;
-
-    if (isPlaying) {
-      audioElement.pause();
-    } else {
-      audioElement.play();
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
-
-    setIsPlaying(!isPlaying);
   };
 
   const handleVideoClick = () => {
@@ -223,7 +222,11 @@ const App = () => {
                   onClick={handlePlayClick}
                 />
               )}
-              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+              {!dialogaudio ? (
+                ""
+              ) : (
+                <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+              )}
             </div>
           </TabPane>
           <TabPane tab="视频" key="video">
