@@ -228,7 +228,7 @@ const App = () => {
           </TabPane>
           <TabPane tab="视频" key="video">
             <div className="video-player" onClick={handleVideoClick}>
-              <video ref={videoRef} className="video-element" controls={false}>
+              <video ref={videoRef} className="video-element" controls={true}>
                 <source src={dialogvideo} type="video/mp4" />
               </video>
             </div>
