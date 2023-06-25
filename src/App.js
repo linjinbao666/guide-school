@@ -198,7 +198,7 @@ const App = () => {
             </div>
           </TabPane>
           <TabPane tab="图片" key="image">
-            <Carousel autoplay={false}>
+            <Carousel autoplay={false} dots className="custom-carousel">
               {dialogImages && dialogImages.map((image, index) => (
                 <div key={index}>
                   <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
