@@ -5,11 +5,23 @@
     "title": "文东校区大门（北门）",
     "text": "",
     "images": [
+        "/assets/25/图片161.jpg",
+        "/assets/25/图片160.jpg",
+        "/assets/25/图片162.jpg",
+        "/assets/25/图片163.jpg",
+        "/assets/25/图片167.jpg",
+        "/assets/25/图片166.jpg",
+        "/assets/25/图片164.jpg",
+        "/assets/25/图片170.jpg",
         "/assets/25/图片158.jpg",
         "/assets/25/图片159.jpg",
+        "/assets/25/图片171.jpg",
+        "/assets/25/图片165.jpg",
+        "/assets/25/图片168.jpg",
+        "/assets/25/图片169.jpg",
         "/assets/25/图片157.jpg",
         "/assets/25/图片156.jpg"
     ],
-    "audio": "",
-    "video": ""
+    "audio": "/assets/25/中国人民警察警歌.mp3",
+    "video": "/assets/25/山东警察学院2022年招生视频.mp4"
 }
