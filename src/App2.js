@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
+import './App2.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
@@ -8,7 +8,7 @@ import { FaPlay, FaPause } from 'react-icons/fa';
 const { TabPane } = Tabs;
 const { Text } = Typography;
 
-const App = () => {
+const App2 = () => {
 
   const [dialogTitle, setDialogTitle] = useState('');
   const [dialogText, setDialogText] = useState(null);
@@ -53,7 +53,7 @@ const App = () => {
       const dataPromises = [];
 
       // 遍历目录下的文件夹
-      for (let i = 1; i <= 24; i++) {
+      for (let i = 24; i <= 41; i++) {
         const folderPath = `${directory}/${i}`;
         const dataFilePath = `${folderPath}/data.json`;
 
@@ -176,8 +176,8 @@ const App = () => {
 
           return (
             <div className="grid-cell" key={index}>
-              {/* <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span> */}
+              <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span>
 
               {mapIconCellsForCoord.map((mapIconCell, i) => (
                 <div
@@ -256,4 +256,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default App2;
