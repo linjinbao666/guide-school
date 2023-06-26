@@ -100,6 +100,18 @@ const App = () => {
     }
   }
 
+  const disablePageZoom = () => {
+    document.documentElement.style.zoom = '1';
+    const metaTag = document.querySelector('meta[name="viewport"]');
+    metaTag.content = 'width=device-width, initial-scale=1, maximum-scale=1';
+  };
+
+  const enablePageZoom = () =>{
+    document.documentElement.style.zoom = '1';
+    const metaTag = document.querySelector('meta[name="viewport"]');
+    metaTag.content = 'width=device-width, initial-scale=1';
+  };
+
   const handleGridCellClick = (title, text, images, audio, video) => {
     setDialogTitle(title);
     setDialogText(text);
@@ -107,6 +119,8 @@ const App = () => {
     setDialogaudio(audio);
     setDialogvideo(video);
     setDialogVisible(true);
+
+    disablePageZoom();
   };
 
   const closeDialog = () => {
@@ -127,6 +141,8 @@ const App = () => {
       videoRef.current.pause();
       setVideoIsPlaying(false);
     }
+
+    enablePageZoom();
   };
 
   const handleTabChange = (key) => {
