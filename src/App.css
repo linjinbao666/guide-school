@@ -189,6 +189,11 @@
   /* 设置面板指示点的高度 */
 }
 
+.custom-carousel .slick-dots .slick-active button {
+  background-color: black !important;
+  /* 设置面板指示点的背景颜色 */
+}
+
 .my-modal {
 
   background-color: rgba(255, 255, 255, 0.5);
