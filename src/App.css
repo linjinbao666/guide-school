@@ -90,6 +90,7 @@
   overflow: hidden;
   /* 隐藏超出容器尺寸的内容 */
   transform: scale(0.85);
+  object-fit: contain;
 }
 
 .carousel-image img {
