@@ -53,7 +53,7 @@ const App2 = () => {
       const dataPromises = [];
 
       // 遍历目录下的文件夹
-      for (let i = 24; i <= 41; i++) {
+      for (let i = 25; i <= 36; i++) {
         const folderPath = `${directory}/${i}`;
         const dataFilePath = `${folderPath}/data.json`;
 
@@ -176,8 +176,8 @@ const App2 = () => {
 
           return (
             <div className="grid-cell2" key={index}>
-              <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span>
+              {/* <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span> */}
 
               {mapIconCellsForCoord.map((mapIconCell, i) => (
                 <div

@@ -61,6 +61,14 @@ const App = () => {
         const dataPromise = fetch(dataFilePath).then((response) => response.json());
         dataPromises.push(dataPromise);
       }
+      for (let i = 37; i <= 41; i++) {
+        const folderPath = `${directory}/${i}`;
+        const dataFilePath = `${folderPath}/data.json`;
+
+        // 读取每个目录中的data.json文件
+        const dataPromise = fetch(dataFilePath).then((response) => response.json());
+        dataPromises.push(dataPromise);
+      }
 
       // 等待所有data.json文件的读取完成
       const jsonDataArray = await Promise.all(dataPromises);
