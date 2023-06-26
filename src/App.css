@@ -11,24 +11,27 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('map.jpg'); /* 替换为你的图片URL */
+  background-image: url('map.jpg');
+  /* 替换为你的图片URL */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  z-index: -1; /* 将背景图片放在最底层 */
+  z-index: -1;
+  /* 将背景图片放在最底层 */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 @media (max-width: 768px) {
-  
+
   /* 在手机端的样式 */
   .container {
     max-width: 480px;
     margin: 0 auto;
-    background-size: 100% auto; 
+    background-size: 100% auto;
   }
+
   body {
     background-color: #000000;
   }
@@ -38,7 +41,8 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(24, 1fr);
-  gap: 1px; /* 可选：用于添加小间隔 */
+  gap: 1px;
+  /* 可选：用于添加小间隔 */
   width: 100%;
   height: 100vh;
   background-color: transparent;
@@ -49,7 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent; /* 设置为透明 */
+  background-color: transparent;
+  /* 设置为透明 */
   /* border: 0.3px solid rgb(179, 0, 255);  */
 }
 
@@ -71,20 +76,29 @@
 }
 
 .map-icon {
-  color: #ff0000; /* Set the icon color to red */
-  font-size: 20px; /* Set the icon size */
+  color: #ff0000;
+  /* Set the icon color to red */
+  font-size: 20px;
+  /* Set the icon size */
 }
 
 .carousel-image {
-  width: 100%; /* 设置容器宽度，根据实际情况调整 */
-  height: 300px; /* 设置容器高度，根据实际情况调整 */
-  overflow: hidden; /* 隐藏超出容器尺寸的内容 */
+  width: 100%;
+  /* 设置容器宽度，根据实际情况调整 */
+  height: 300px;
+  /* 设置容器高度，根据实际情况调整 */
+  overflow: hidden;
+  /* 隐藏超出容器尺寸的内容 */
+  transform: scale(0.85);
 }
 
 .carousel-image img {
-  width: 100%; /* 图片宽度设置为100%，自动适应容器宽度 */
-  height: auto; /* 图片高度自适应，保持宽高比例 */
-  object-fit: contain; /* 控制图片在容器中的填充方式，可以根据需求使用其他值，如 cover 或 fill */
+  width: 100%;
+  /* 图片宽度设置为100%，自动适应容器宽度 */
+  height: auto;
+  /* 图片高度自适应，保持宽高比例 */
+  object-fit: contain;
+  /* 控制图片在容器中的填充方式，可以根据需求使用其他值，如 cover 或 fill */
 }
 
 .scrollable-content {
@@ -93,16 +107,20 @@
 }
 
 .scrollable-content::-webkit-scrollbar {
-  width: 6px; /* 调整滚动轮的宽度 */
+  width: 6px;
+  /* 调整滚动轮的宽度 */
 }
 
 .scrollable-content::-webkit-scrollbar-thumb {
-  background-color: #888; /* 设置滚动轮的颜色 */
-  border-radius: 3px; /* 设置滚动轮的圆角 */
+  background-color: #888;
+  /* 设置滚动轮的颜色 */
+  border-radius: 3px;
+  /* 设置滚动轮的圆角 */
 }
 
 .scrollable-content::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* 设置滚动轮在悬停时的颜色 */
+  background-color: #555;
+  /* 设置滚动轮在悬停时的颜色 */
 }
 
 .text-container {
@@ -118,12 +136,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40vh; /* 或适当的高度，根据需要调整 */
+  height: 40vh;
+  /* 或适当的高度，根据需要调整 */
 }
 
 .play-icon {
-  font-size: 48px; /* 根据需要调整图标的大小 */
-  color: #000; /* 根据需要调整图标的颜色 */
+  font-size: 48px;
+  /* 根据需要调整图标的大小 */
+  color: #000;
+  /* 根据需要调整图标的颜色 */
   cursor: pointer;
 }
 
@@ -131,10 +152,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh; /* 或适当的高度，根据需要调整 */
+  height: 20vh;
+  /* 或适当的高度，根据需要调整 */
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 宽高比的百分比值 */
+  padding-top: 56.25%;
+  /* 16:9 宽高比的百分比值 */
 }
 
 .video-element {
@@ -145,14 +168,34 @@
   height: 100%;
 }
 
+.custom-carousel {
+  position: relative;
+}
+
+.custom-carousel .slick-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .custom-carousel .slick-dots li button {
-  background-color: #f90404; /* 设置面板指示点的背景颜色 */
-  width: 15px; /* 设置面板指示点的宽度 */
-  height: 10px; /* 设置面板指示点的高度 */
+  background-color: blue;
+  /* 设置面板指示点的背景颜色 */
+  width: 15px;
+  /* 设置面板指示点的宽度 */
+  height: 10px;
+  /* 设置面板指示点的高度 */
 }
 
 .my-modal {
 
-  background-color: rgba(255, 255, 255, 0.5); 
-  backdrop-filter: blur(8px); 
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.ant-tabs-tab-active {
+  background-color: rgb(181, 179, 179) !important;
+  /* 激活状态的背景颜色 */
 }
