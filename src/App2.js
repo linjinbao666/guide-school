@@ -164,9 +164,9 @@ const App2 = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container2">
       <div className="background-image2"></div>
-      <div className="grid-container">
+      <div className="grid-container2">
         {/* 循环渲染小方格 */}
         {coordinates.map((coord, index) => {
           const mapIconCellsForCoord = mapIconCells.filter(
@@ -175,7 +175,7 @@ const App2 = () => {
           const isMapIconCell = mapIconCellsForCoord.length > 0;
 
           return (
-            <div className="grid-cell" key={index}>
+            <div className="grid-cell2" key={index}>
               <span className="coord-x">{coord.col}</span>
               <span className="coord-y">{coord.row}</span>
 
@@ -220,7 +220,7 @@ const App2 = () => {
           <TabPane tab="文字" key="text">
             <div className="scrollable-content">
               <Text>
-                <div className="text-container">{dialogText}</div>
+                <div className="text-container2">{dialogText}</div>
               </Text>
             </div>
           </TabPane>
