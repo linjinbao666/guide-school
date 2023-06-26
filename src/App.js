@@ -173,11 +173,6 @@ const App = () => {
             cell => cell.row === coord.row && cell.col === coord.col
           );
           const isMapIconCell = mapIconCellsForCoord.length > 0;
-          const title = isMapIconCell ? mapIconCellsForCoord[0].title : null;
-          const text = isMapIconCell ? mapIconCellsForCoord[0].text : null;
-          const images = isMapIconCell ? mapIconCellsForCoord[0].images : null;
-          const audio = isMapIconCell ? mapIconCellsForCoord[0].audio : null;
-          const video = isMapIconCell ? mapIconCellsForCoord[0].video : null;
 
           return (
             <div className="grid-cell" key={index}>
