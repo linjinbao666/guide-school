@@ -165,7 +165,7 @@ const App2 = () => {
 
   return (
     <div className="container">
-      <div className="background-image"></div>
+      <div className="background-image2"></div>
       <div className="grid-container">
         {/* 循环渲染小方格 */}
         {coordinates.map((coord, index) => {
