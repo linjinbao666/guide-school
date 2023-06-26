@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+import SwipeableViews from 'react-swipeable-views';
 import './index.css';
 import App from './App';
+import App2 from './App2';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const rootElement = document.getElementById('root');
+
+const AppContainer = () => {
+  const [currentPage, setCurrentPage] = useState(0); // 当前页面的索引
+
+  const handleChangePage = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
+
+  return (
+    <SwipeableViews index={currentPage} onChangeIndex={handleChangePage}>
+      <App />
+      <App2 />
+    </SwipeableViews>
+  );
+};
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <AppContainer />
+  </React.StrictMode>,
+  rootElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// ...
