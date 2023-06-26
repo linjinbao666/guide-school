@@ -17,9 +17,8 @@ const App = () => {
   const [dialogvideo, setDialogvideo] = useState(null);
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
-
   const [mapIconCells, setMapIconCells] = useState([]);
-
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const [isVideoPlaying, setVideoIsPlaying] = useState(false);
@@ -37,15 +36,14 @@ const App = () => {
   };
 
   const handleVideoClick = () => {
-    const videoElement = videoRef.current;
-
-    if (isVideoPlaying) {
-      videoElement.pause();
-    } else {
-      videoElement.play();
+    if (videoRef.current) {
+      if(isVideoPlaying){
+        videoRef.current.pause();
+      }else{
+        videoRef.current.play();
+      }
+      setVideoIsPlaying(!isVideoPlaying);
     }
-
-    setVideoIsPlaying(!isVideoPlaying);
   };
 
   useEffect(() => {
@@ -121,6 +119,12 @@ const App = () => {
     setDialogVisible(true);
 
     disablePageZoom();
+
+    if (videoRef.current) {
+      videoRef.current.pause();
+      setVideoIsPlaying(false);
+      videoRef.current.src = video; // 设置新的视频源
+    }
   };
 
   const closeDialog = () => {
@@ -246,12 +250,11 @@ const App = () => {
           </TabPane>
           <TabPane tab="视频" key="video">
             <div className="video-player" onClick={handleVideoClick}>
-              <video ref={videoRef} className="video-element" >
+              <video ref={videoRef} className="video-element">
                 <source src={dialogvideo} type="video/mp4" />
               </video>
             </div>
           </TabPane>
-
         </Tabs>
       </Modal>
     </div>
