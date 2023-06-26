@@ -55,7 +55,7 @@
   justify-content: center;
   background-color: transparent;
   /* 设置为透明 */
-  /* border: 0.3px solid rgb(179, 0, 255);  */
+  border: 0.3px solid rgb(179, 0, 255); 
 }
 
 .coord-x,
@@ -198,4 +198,8 @@
 .ant-tabs-tab-active {
   background-color: rgb(181, 179, 179) !important;
   /* 激活状态的背景颜色 */
+}
+
+.offset-grid-icon {
+  margin-left: 5px;
 }
