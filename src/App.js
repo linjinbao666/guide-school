@@ -56,7 +56,7 @@ const App = () => {
       const dataPromises = [];
 
       // 遍历目录下的文件夹
-      for (let i = 1; i <= 42; i++) {
+      for (let i = 1; i <= 41; i++) {
         const folderPath = `${directory}/${i}`;
         const dataFilePath = `${folderPath}/data.json`;
 
