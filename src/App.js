@@ -149,31 +149,42 @@ const App = () => {
       <div className="grid-container">
         {/* 循环渲染小方格 */}
         {coordinates.map((coord, index) => {
-          const mapIconCell = mapIconCells.find(
+          const mapIconCellsForCoord = mapIconCells.filter(
             cell => cell.row === coord.row && cell.col === coord.col
           );
-          const isMapIconCell = !!mapIconCell;
-          const title = isMapIconCell ? mapIconCell.title : null;
-          const text = isMapIconCell ? mapIconCell.text : null;
-          const images = isMapIconCell ? mapIconCell.images : null;
-          const audio = isMapIconCell ? mapIconCell.audio : null;
-          const video = isMapIconCell ? mapIconCell.video : null;
+          const isMapIconCell = mapIconCellsForCoord.length > 0;
+          const title = isMapIconCell ? mapIconCellsForCoord[0].title : null;
+          const text = isMapIconCell ? mapIconCellsForCoord[0].text : null;
+          const images = isMapIconCell ? mapIconCellsForCoord[0].images : null;
+          const audio = isMapIconCell ? mapIconCellsForCoord[0].audio : null;
+          const video = isMapIconCell ? mapIconCellsForCoord[0].video : null;
+
           return (
             <div className="grid-cell" key={index}>
-              {isMapIconCell ? (
+              <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span>
+
+              {mapIconCellsForCoord.map((mapIconCell, i) => (
                 <div
-                  className="grid-icon"
-                  onClick={() => handleGridCellClick(title, text, images, audio, video)}
+                  className={`grid-icon ${i > 0 ? 'offset-grid-icon' : ''}`}
+                  onClick={() =>
+                    handleGridCellClick(
+                      mapIconCell.title,
+                      mapIconCell.text,
+                      mapIconCell.images,
+                      mapIconCell.audio,
+                      mapIconCell.video
+                    )
+                  }
+                  key={i}
                 >
                   <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
                 </div>
-
-              ) : null}
-              {/* <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span> */}
+              ))}
             </div>
           );
         })}
+
       </div>
       <Modal
         title={<div style={{ textAlign: 'center' }}>{dialogTitle}</div>}
