@@ -176,8 +176,8 @@ const App = () => {
 
           return (
             <div className="grid-cell" key={index}>
-              {/* <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span> */}
+              <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span>
 
               {mapIconCellsForCoord.map((mapIconCell, i) => (
                 <div
