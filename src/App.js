@@ -3,7 +3,7 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
-import audioImage from './audio.png';
+import { FaPlay, FaPause } from 'react-icons/fa';
 
 const { TabPane } = Tabs;
 const { Text } = Typography;
@@ -161,8 +161,8 @@ const App = () => {
 
           return (
             <div className="grid-cell" key={index}>
-              <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span>
+              {/* <span className="coord-x">{coord.col}</span>
+              <span className="coord-y">{coord.row}</span> */}
 
               {mapIconCellsForCoord.map((mapIconCell, i) => (
                 <div
@@ -221,25 +221,11 @@ const App = () => {
           <TabPane tab="音频" key="audio">
             <div className="audio-player">
               {isPlaying ? (
-                <img
-                  className="play-icon"
-                  src={audioImage}
-                  alt="Pause"
-                  onClick={handlePlayClick}
-                />
+                <FaPause className="play-icon" onClick={handlePlayClick} />
               ) : (
-                <img
-                  className="play-icon"
-                  src={audioImage}
-                  alt="Play"
-                  onClick={handlePlayClick}
-                />
+                <FaPlay className="play-icon" onClick={handlePlayClick} />
               )}
-              {!dialogaudio ? (
-                ""
-              ) : (
-                <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
-              )}
+              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
             </div>
           </TabPane>
           <TabPane tab="视频" key="video">
