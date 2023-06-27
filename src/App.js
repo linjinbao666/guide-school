@@ -185,7 +185,6 @@ const App = () => {
             cell => cell.row === coord.row && cell.col === coord.col
           );
           const isMapIconCell = mapIconCellsForCoord.length > 0;
-
           return (
             <div className="grid-cell" key={index}>
               {/* <span className="coord-x">{coord.col}</span>
