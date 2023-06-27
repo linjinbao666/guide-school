@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { Modal, Tabs, Typography, Carousel } from 'antd';
 import { FaPlay, FaPause } from 'react-icons/fa';
+import canvasImage2 from './map2.jpg';
 
 const { TabPane } = Tabs;
 const { Text } = Typography;
@@ -17,7 +18,7 @@ const App2 = () => {
   const [dialogvideo, setDialogvideo] = useState(null);
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
-  const [mapIconCells, setMapIconCells] = useState([]);
+  const [mapIconCells2, setMapIconCells2] = useState([]);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
@@ -70,7 +71,7 @@ const App2 = () => {
         return result.concat(jsonData);
       }, []);
 
-      setMapIconCells(mergedData);
+      setMapIconCells2(mergedData);
     };
 
     fetchData();
@@ -89,14 +90,6 @@ const App2 = () => {
       }
     };
   }, []);
-
-  // 创建坐标数组
-  const coordinates = [];
-  for (let row = 0; row < 24; row++) {
-    for (let col = 0; col < 12; col++) {
-      coordinates.push({ row, col });
-    }
-  }
 
   const disablePageZoom = () => {
     document.documentElement.style.zoom = '1';
@@ -167,43 +160,30 @@ const App2 = () => {
     }
   };
 
+  const mapIconElements2 = mapIconCells2.map((item) => (
+    <div
+      key={item.id}
+      className="pixel"
+      onClick={() =>
+        handleGridCellClick(
+          item.title,
+          item.text,
+          item.images,
+          item.audio,
+          item.video
+        )
+      }
+      style={{ top: `${item.row-145}px`, left: `${item.col-5}px` }}
+    >
+      <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon2" />
+    </div>
+  ));
+
   return (
     <div className="container2">
-      <div className="background-image2"></div>
-      <div className="grid-container2">
-        {/* 循环渲染小方格 */}
-        {coordinates.map((coord, index) => {
-          const mapIconCellsForCoord = mapIconCells.filter(
-            cell => cell.row === coord.row && cell.col === coord.col
-          );
-          const isMapIconCell = mapIconCellsForCoord.length > 0;
-
-          return (
-            <div className="grid-cell2" key={index}>
-              {/* <span className="coord-x">{coord.col}</span>
-              <span className="coord-y">{coord.row}</span> */}
-
-              {mapIconCellsForCoord.map((mapIconCell, i) => (
-                <div
-                  className={`grid-icon ${i > 0 ? 'offset-grid-icon' : ''}`}
-                  onClick={() =>
-                    handleGridCellClick(
-                      mapIconCell.title,
-                      mapIconCell.text,
-                      mapIconCell.images,
-                      mapIconCell.audio,
-                      mapIconCell.video
-                    )
-                  }
-                  key={i}
-                >
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon2" />
-                </div>
-              ))}
-            </div>
-          );
-        })}
-
+      <div className="canvas-container">
+        <img src={canvasImage2} alt="Canvas" className="canvas" />
+        {mapIconElements2}
       </div>
       <Modal
         title={<div style={{ textAlign: 'center' }}>{dialogTitle}</div>}

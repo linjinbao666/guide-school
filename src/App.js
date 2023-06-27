@@ -183,7 +183,7 @@ const App = () => {
       }
       style={{ top: `${item.row-145}px`, left: `${item.col-5}px` }}
     >
-      <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon2" />
+      <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
     </div>
   ));
 
