@@ -148,12 +148,9 @@ const App = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     }
-
-    if (isVideoPlaying) {
-      videoRef.current.pause();
-      setVideoIsPlaying(false);
-    }
-
+    console.log(isVideoPlaying + "ss")
+    videoRef.current.pause();
+    setVideoIsPlaying(false);
     enablePageZoom();
   };
 
@@ -165,10 +162,8 @@ const App = () => {
       setIsPlaying(false);
     }
 
-    if (key !== "video" && isVideoPlaying) {
-      videoRef.current.pause();
-      setVideoIsPlaying(false);
-    }
+    videoRef.current.pause();
+    setVideoIsPlaying(false);
   };
 
   return (
@@ -264,7 +259,7 @@ const App = () => {
           {dialogvideo && (
             <TabPane tab="视频" key="video">
               <div className="video-player" onClick={handleVideoClick}>
-                <video ref={videoRef} className="video-element">
+                <video ref={videoRef} className="video-element" controls>
                   <source src={dialogvideo} type="video/mp4" />
                 </video>
               </div>
