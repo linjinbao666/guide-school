@@ -19,14 +19,14 @@ const App = () => {
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
   const [mapIconCells, setMapIconCells] = useState([]);
-
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const [isVideoPlaying, setVideoIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  
+  const [errorMessage, setErrorMessage] = useState('');
+
   const handlePlayClick = () => {
-    if (audioRef.current) {
+    if (dialogaudio && audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
@@ -234,7 +234,8 @@ const App = () => {
               ) : (
                 <FaPlay className="play-icon" onClick={handlePlayClick} />
               )}
-              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" onError={() => setErrorMessage('缺少音频文件')} />
+              {errorMessage && <p>{errorMessage}</p>}
             </div>
           </TabPane>
 
