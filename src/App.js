@@ -148,9 +148,10 @@ const App = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     }
-    console.log(isVideoPlaying + "ss")
-    if(dialogvideo){
-      videoRef.current.pause();
+    if (dialogvideo) {
+      if(videoRef !== null && videoRef.current !== null){
+        videoRef.current.pause();
+      }
       setVideoIsPlaying(false);
     }
 
@@ -166,10 +167,12 @@ const App = () => {
     }
 
     if (key !== "video" && dialogvideo) {
-      videoRef.current.pause();
+      if(videoRef !== null && videoRef.current !== null){
+        videoRef.current.pause();
+      }
       setVideoIsPlaying(false);
     }
-    
+
   };
 
   return (
@@ -226,42 +229,35 @@ const App = () => {
           onChange={handleTabChange}
           centered
           style={{ height: '380px' }} >
-          {dialogText && (
-            <TabPane tab="文字" key="text">
-              <div className="scrollable-content">
-                <Text>
-                  <div className="text-container">{dialogText}</div>
-                </Text>
-              </div>
-            </TabPane>
-          )}
-          {
-            dialogImages && (
-              <TabPane tab="图片" key="image">
-                <Carousel autoplay={false} dots className="custom-carousel">
-                  {dialogImages && dialogImages.map((image, index) => (
-                    <div key={index}>
-                      <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
-                    </div>
-                  ))}
-                </Carousel>
-              </TabPane>
-            )
-          }
-          {
-            dialogaudio && (
-              <TabPane tab="音频" key="audio">
-                <div className="audio-player">
-                  {isPlaying ? (
-                    <FaPause className="play-icon" onClick={handlePlayClick} />
-                  ) : (
-                    <FaPlay className="play-icon" onClick={handlePlayClick} />
-                  )}
-                  <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+
+          <TabPane tab="文字" key="text">
+            <div className="scrollable-content">
+              <Text>
+                <div className="text-container">{dialogText}</div>
+              </Text>
+            </div>
+          </TabPane>
+
+          <TabPane tab="图片" key="image">
+            <Carousel autoplay={false} dots className="custom-carousel">
+              {dialogImages && dialogImages.map((image, index) => (
+                <div key={index}>
+                  <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
                 </div>
-              </TabPane>
-            )
-          }
+              ))}
+            </Carousel>
+          </TabPane>
+          <TabPane tab="音频" key="audio">
+            <div className="audio-player">
+              {isPlaying ? (
+                <FaPause className="play-icon" onClick={handlePlayClick} />
+              ) : (
+                <FaPlay className="play-icon" onClick={handlePlayClick} />
+              )}
+              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
+            </div>
+          </TabPane>
+
           {dialogvideo && (
             <TabPane tab="视频" key="video">
               <div className="video-player" onClick={handleVideoClick}>
