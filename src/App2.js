@@ -197,7 +197,7 @@ const App2 = () => {
                   }
                   key={i}
                 >
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon2" />
                 </div>
               ))}
             </div>

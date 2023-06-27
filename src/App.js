@@ -100,8 +100,8 @@ const App = () => {
 
   // 创建坐标数组
   const coordinates = [];
-  for (let row = 0; row < 48; row++) {
-    for (let col = 0; col < 24; col++) {
+  for (let row = 0; row < 72; row++) {
+    for (let col = 0; col < 36; col++) {
       coordinates.push({ row, col });
     }
   }

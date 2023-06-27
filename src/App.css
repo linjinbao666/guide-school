@@ -39,8 +39,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(24, 1fr);
-  grid-template-rows: repeat(48, 1fr);
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(72, 1fr);
   gap: 1px;
   /* 可选：用于添加小间隔 */
   width: 100%;
@@ -55,30 +55,30 @@
   justify-content: center;
   background-color: transparent;
   /* 设置为透明 */
-  /* border: 0.3px solid rgb(179, 0, 255);  */
+  /* border: 0.1px solid rgb(179, 0, 255);  */
 }
 
 .coord-x,
 .coord-y {
   position: absolute;
   color: #000000;
-  font-size: 3px;
+  font-size: 1px;
 }
 
 .coord-x {
-  top: 2px;
-  left: 2px;
+  top: 0px;
+  left: 0px;
 }
 
 .coord-y {
-  bottom: 2px;
-  right: 2px;
+  bottom: 0px;
+  right: 0px;
 }
 
 .map-icon {
   color: #ff0000;
   /* Set the icon color to red */
-  font-size: 19px;
+  font-size: 10px;
   /* Set the icon size */
 }
 
@@ -207,5 +207,5 @@
 }
 
 .offset-grid-icon {
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
