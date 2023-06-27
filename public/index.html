@@ -23,6 +23,17 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>山东警察学院校园文化智能导览</title>
+  <script>
+    function bodyScale() {
+      var devicewidth = document.documentElement.clientWidth;
+      var scale = devicewidth / 390;  // 分母——设计稿的尺寸宽度
+      document.body.style.zoom = scale;
+    }
+    window.onload = window.onresize = function () {
+      bodyScale();
+    };
+
+  </script>
 </head>
 
 <body>
