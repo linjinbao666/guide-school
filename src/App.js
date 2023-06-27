@@ -149,8 +149,11 @@ const App = () => {
       setIsPlaying(false);
     }
     console.log(isVideoPlaying + "ss")
-    videoRef.current.pause();
-    setVideoIsPlaying(false);
+    if(dialogvideo){
+      videoRef.current.pause();
+      setVideoIsPlaying(false);
+    }
+
     enablePageZoom();
   };
 
@@ -162,8 +165,11 @@ const App = () => {
       setIsPlaying(false);
     }
 
-    videoRef.current.pause();
-    setVideoIsPlaying(false);
+    if (key !== "video" && dialogvideo) {
+      videoRef.current.pause();
+      setVideoIsPlaying(false);
+    }
+    
   };
 
   return (
