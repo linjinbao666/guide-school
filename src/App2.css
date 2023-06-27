@@ -1,78 +1,25 @@
 .container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0px;
+  }
+  
+  .canvas-container {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    bottom: 40px;
   }
   
-  .background-image2 {
+  .canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .pixel {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('map2.jpg') !important;
-    /* 替换为你的图片URL */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    z-index: -2;
-    /* 将背景图片放在最底层 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  @media (max-width: 768px) {
-  
-    /* 在手机端的样式 */
-    .container2 {
-      max-width: 480px;
-      margin: 0 auto;
-      background-size: 100% auto;
-    }
-  
-    body {
-      background-color: #000000;
-    }
-  }
-  
-  .grid-container2 {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(24, 1fr);
-    gap: 1px;
-    /* 可选：用于添加小间隔 */
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-  }
-  
-  .grid-cell2 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    /* 设置为透明 */
-    /* border: 0.3px solid rgb(179, 0, 255);  */
-  }
-  
-  .coord-x,
-  .coord-y {
-    position: absolute;
-    color: #000000;
-    font-size: 3px;
-  }
-  
-  .coord-x {
-    top: 2px;
-    left: 2px;
-  }
-  
-  .coord-y {
-    bottom: 2px;
-    right: 2px;
+    width: 1px;
+    height: 1px;
+    background-color: red;
   }
   
   .map-icon2 {
