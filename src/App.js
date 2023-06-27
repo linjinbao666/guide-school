@@ -18,7 +18,7 @@ const App = () => {
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
   const [mapIconCells, setMapIconCells] = useState([]);
-  
+
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   const [isVideoPlaying, setVideoIsPlaying] = useState(false);
@@ -37,9 +37,9 @@ const App = () => {
 
   const handleVideoClick = () => {
     if (videoRef.current) {
-      if(isVideoPlaying){
+      if (isVideoPlaying) {
         videoRef.current.pause();
-      }else{
+      } else {
         videoRef.current.play();
       }
       setVideoIsPlaying(!isVideoPlaying);
@@ -112,7 +112,7 @@ const App = () => {
     metaTag.content = 'width=device-width, initial-scale=1, maximum-scale=1';
   };
 
-  const enablePageZoom = () =>{
+  const enablePageZoom = () => {
     document.documentElement.style.zoom = '1';
     const metaTag = document.querySelector('meta[name="viewport"]');
     metaTag.content = 'width=device-width, initial-scale=1';
@@ -225,39 +225,51 @@ const App = () => {
           onChange={handleTabChange}
           centered
           style={{ height: '380px' }} >
-          <TabPane tab="文字" key="text">
-            <div className="scrollable-content">
-              <Text>
-                <div className="text-container">{dialogText}</div>
-              </Text>
-            </div>
-          </TabPane>
-          <TabPane tab="图片" key="image">
-            <Carousel autoplay={false} dots className="custom-carousel">
-              {dialogImages && dialogImages.map((image, index) => (
-                <div key={index}>
-                  <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
+          {dialogText && (
+            <TabPane tab="文字" key="text">
+              <div className="scrollable-content">
+                <Text>
+                  <div className="text-container">{dialogText}</div>
+                </Text>
+              </div>
+            </TabPane>
+          )}
+          {
+            dialogImages && (
+              <TabPane tab="图片" key="image">
+                <Carousel autoplay={false} dots className="custom-carousel">
+                  {dialogImages && dialogImages.map((image, index) => (
+                    <div key={index}>
+                      <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
+                    </div>
+                  ))}
+                </Carousel>
+              </TabPane>
+            )
+          }
+          {
+            dialogaudio && (
+              <TabPane tab="音频" key="audio">
+                <div className="audio-player">
+                  {isPlaying ? (
+                    <FaPause className="play-icon" onClick={handlePlayClick} />
+                  ) : (
+                    <FaPlay className="play-icon" onClick={handlePlayClick} />
+                  )}
+                  <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
                 </div>
-              ))}
-            </Carousel>
-          </TabPane>
-          <TabPane tab="音频" key="audio">
-            <div className="audio-player">
-              {isPlaying ? (
-                <FaPause className="play-icon" onClick={handlePlayClick} />
-              ) : (
-                <FaPlay className="play-icon" onClick={handlePlayClick} />
-              )}
-              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" />
-            </div>
-          </TabPane>
-          <TabPane tab="视频" key="video">
-            <div className="video-player" onClick={handleVideoClick}>
-              <video ref={videoRef} className="video-element">
-                <source src={dialogvideo} type="video/mp4" />
-              </video>
-            </div>
-          </TabPane>
+              </TabPane>
+            )
+          }
+          {dialogvideo && (
+            <TabPane tab="视频" key="video">
+              <div className="video-player" onClick={handleVideoClick}>
+                <video ref={videoRef} className="video-element">
+                  <source src={dialogvideo} type="video/mp4" />
+                </video>
+              </div>
+            </TabPane>
+          )}
         </Tabs>
       </Modal>
     </div>
