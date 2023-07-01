@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: v16.18.1
 
       - name: Install dependencies
         run: npm install --force
@@ -44,5 +44,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build.zip
-          asset_name: package.zip
+          asset_name: build.zip
           asset_content_type: application/zip
