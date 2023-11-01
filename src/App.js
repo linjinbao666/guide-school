@@ -181,9 +181,14 @@ const App = () => {
           item.video
         )
       }
-      style={{ top: `${item.row-145}px`, left: `${item.col-5}px` }}
+      style={{
+        top: item.title ? `${item.row - 145}px` : '-100px',
+        left: item.title ? `${item.col - 5}px` : '-100px'
+      }}
     >
-      <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
+      {item.title ? (
+        <FontAwesomeIcon icon={faMapMarkerAlt} className="map-icon" />
+      ) : null}
     </div>
   ));
 
