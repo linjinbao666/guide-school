@@ -3,7 +3,7 @@
     "row": 443,
     "col": 133,
     "title": "综合服务楼",
-    "text": "",
+    "text": "综合服务楼面积10276平方米，6层，建筑高度23.35米。内含酒店式公寓和大学生综合服务中心",
     "images": [
         "/assets/15/图片94.jpg",
         "/assets/15/图片95.jpg",
@@ -12,8 +12,9 @@
         "/assets/15/图片92.jpg",
         "/assets/15/图片93.jpg",
         "/assets/15/图片89.jpg",
-        "/assets/15/图片88.jpg"
+        "/assets/15/图片88.jpg",
+        "/assets/15/图片-ssx.png"
     ],
-    "audio": "",
+    "audio": "/assets/15/综合服务楼.mp3",
     "video": ""
 }
