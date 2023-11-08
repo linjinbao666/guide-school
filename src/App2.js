@@ -252,8 +252,6 @@ const App2 = () => {
               <div className='url-player'>
                 <a target='_blank' href={dialogurl}>https://www.720yun.com/t/a5vk6yry7p9</a>
                 <br />
-                <br />
-                <br />
                 <p>点击链接后跳转到相关网页</p>
               </div>
             </TabPane>
