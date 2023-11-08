@@ -16,6 +16,7 @@ const App2 = () => {
   const [dialogImages, setDialogImages] = useState(null);
   const [dialogaudio, setDialogaudio] = useState(null);
   const [dialogvideo, setDialogvideo] = useState(null);
+  const [dialogurl, setDialogurl] = useState(null);
   const [dialogVisible, setDialogVisible] = useState(false);
   const [activeTab, setActiveTab] = useState('text');
   const [mapIconCells2, setMapIconCells2] = useState([]);
@@ -103,12 +104,13 @@ const App2 = () => {
     metaTag.content = 'width=device-width, initial-scale=1';
   };
 
-  const handleGridCellClick = (title, text, images, audio, video) => {
+  const handleGridCellClick = (title, text, images, audio, video, url) => {
     setDialogTitle(title);
     setDialogText(text);
     setDialogImages(images);
     setDialogaudio(audio);
     setDialogvideo(video);
+    setDialogurl(url);
     setDialogVisible(true);
 
     disablePageZoom();
@@ -126,6 +128,7 @@ const App2 = () => {
     setDialogImages(null);
     setDialogaudio(null);
     setDialogvideo(null);
+    setDialogurl(null);
     setDialogVisible(false);
 
     // 关闭弹窗时暂停播放
@@ -170,7 +173,8 @@ const App2 = () => {
           item.text,
           item.images,
           item.audio,
-          item.video
+          item.video,
+          item.url
         )
       }
       style={{ top: `${item.row - 145}px`, left: `${item.col - 5}px` }}
@@ -239,6 +243,17 @@ const App2 = () => {
                 <video ref={videoRef} className="video-element" controls>
                   <source src={dialogvideo} type="video/mp4" />
                 </video>
+              </div>
+            </TabPane>
+          )}
+          
+          {dialogurl && (
+            <TabPane tab="链接" key="url">
+              <div className='url-player'>
+                <a target='_blank' href={dialogurl}>https://www.720yun.com/t/a5vk6yry7p9</a>
+                <br />
+                <br />
+                <p>点击链接后跳转到相关网页</p>
               </div>
             </TabPane>
           )}
