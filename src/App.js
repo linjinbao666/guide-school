@@ -210,7 +210,7 @@ const App = () => {
           <TabPane tab="文字" key="text">
             <div className="scrollable-content">
               <Text>
-                <div className="text-container">{dialogText}</div>
+                <pre className="text-container">{dialogText}</pre>
               </Text>
             </div>
           </TabPane>
