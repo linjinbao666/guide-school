@@ -54,15 +54,7 @@ const App = () => {
       const dataPromises = [];
 
       // 遍历目录下的文件夹
-      for (let i = 1; i <= 24; i++) {
-        const folderPath = `${directory}/${i}`;
-        const dataFilePath = `${folderPath}/data.json`;
-
-        // 读取每个目录中的data.json文件
-        const dataPromise = fetch(dataFilePath).then((response) => response.json());
-        dataPromises.push(dataPromise);
-      }
-      for (let i = 37; i <= 41; i++) {
+      for (let i = 1; i <= 22; i++) {
         const folderPath = `${directory}/${i}`;
         const dataFilePath = `${folderPath}/data.json`;
 

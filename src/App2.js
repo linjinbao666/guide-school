@@ -72,10 +72,10 @@ const App2 = () => {
         return result.concat(jsonData);
       }, []);
 
-      setMapIconCells2(mergedData);
+      // setMapIconCells2(mergedData);
     };
 
-    fetchData();
+    // fetchData();
   }, []);
 
   useEffect(() => {
