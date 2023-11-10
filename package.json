@@ -1,6 +1,7 @@
 {
   "name": "guide-school",
   "version": "0.1.0",
+  "homepage": "/sdld",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --base-href $npm_package_homepage",
     "zip": "node export-zip.js",
     "package": "npm run build && npm run zip",
     "test": "react-scripts test",

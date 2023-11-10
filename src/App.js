@@ -48,7 +48,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    const directory = '/assets';
+    console.log(process.env.PUBLIC_URL)
+    const directory = process.env.PUBLIC_URL+'/assets';
 
     const fetchData = async () => {
       const dataPromises = [];
@@ -219,7 +220,7 @@ const App = () => {
             <Carousel autoplay={false} dots className="custom-carousel">
               {dialogImages && dialogImages.map((image, index) => (
                 <div key={index}>
-                  <img src={image} alt={`Image ${index + 1}`} className="carousel-image" />
+                  <img src={process.env.PUBLIC_URL+image} alt={`Image ${index + 1}`} className="carousel-image" />
                 </div>
               ))}
             </Carousel>
@@ -231,7 +232,7 @@ const App = () => {
               ) : (
                 <FaPlay className="play-icon" onClick={handlePlayClick} />
               )}
-              <audio ref={audioRef} src={dialogaudio} type="audio/mpeg" onError={() => setErrorMessage('缺少音频文件')} />
+              <audio ref={audioRef} src={process.env.PUBLIC_URL+dialogaudio} type="audio/mpeg" onError={() => setErrorMessage('缺少音频文件')} />
               {errorMessage && <p>{errorMessage}</p>}
             </div>
           </TabPane>
@@ -240,7 +241,7 @@ const App = () => {
             <TabPane tab="视频" key="video">
               <div className="video-player" onClick={handleVideoClick}>
                 <video ref={videoRef} className="video-element" controls>
-                  <source src={dialogvideo} type="video/mp4" />
+                  <source src={process.env.PUBLIC_URL+dialogvideo} type="video/mp4" />
                 </video>
               </div>
             </TabPane>
