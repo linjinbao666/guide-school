@@ -1,5 +1,6 @@
 import os
 import json
+import re
 
 directory = "public/assets"
 
@@ -13,13 +14,16 @@ for folder in os.listdir(directory):
         if os.path.isfile(data_file):
             images = []
 
-            # 遍历当前文件夹中的文件
-            for file in os.listdir(folder_path):
-                file_path = os.path.join(folder_path, file)
-                if os.path.isfile(file_path) and file != "data.json" and any(file.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif"]):
-                    # 添加前缀
-                    image_name = f"/assets/{folder}/{file}"
-                    images.append(image_name)
+            # 遍历当前文件夹中的文件，并按包含下划线的文件名数字大小排序
+            files = sorted(
+                [file for file in os.listdir(folder_path) if file != "data.json" and any(file.lower().endswith(ext) for ext in [".jpg", ".jpeg", ".png", ".gif"])],
+                key=lambda x: [int(part) if part.isdigit() else part for part in re.split(r'(\d+)', x)]
+            )
+
+            for file in files:
+                # 添加前缀
+                image_name = f"/assets/{folder}/{file}"
+                images.append(image_name)
 
             # 读取原始data.json内容
             with open(data_file, "r") as file:

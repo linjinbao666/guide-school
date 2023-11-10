@@ -20,9 +20,9 @@ const AppContainer = () => {
       <div style={{ display: currentPage === 0 ? 'block' : 'none' }}>
       <App />
       </div>
-      <div style={{ display: currentPage === 1 ? 'block' : 'none' }}>
+      {/* <div style={{ display: currentPage === 1 ? 'block' : 'none' }}>
       <App2 />
-      </div>
+      </div> */}
     </SwipeableViews>
   );
 };
