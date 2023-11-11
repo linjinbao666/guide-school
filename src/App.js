@@ -13,6 +13,7 @@ const App = () => {
 
   const [dialogTitle, setDialogTitle] = useState('');
   const [dialogText, setDialogText] = useState(null);
+  const [dialogText2, setDialogText2] = useState(null);
   const [dialogImages, setDialogImages] = useState(null);
   const [dialogaudio, setDialogaudio] = useState(null);
   const [dialogvideo, setDialogvideo] = useState(null);
@@ -104,9 +105,10 @@ const App = () => {
     metaTag.content = 'width=device-width, initial-scale=1';
   };
 
-  const handleGridCellClick = (title, text, images, audio, video) => {
+  const handleGridCellClick = (title, text,text2, images, audio, video) => {
     setDialogTitle(title);
     setDialogText(text);
+    setDialogText2(text2);
     setDialogImages(images);
     setDialogaudio(audio);
     setDialogvideo(video);
@@ -124,6 +126,7 @@ const App = () => {
   const closeDialog = () => {
     setDialogTitle('');
     setDialogText(null);
+    setDialogText2(null);
     setDialogImages(null);
     setDialogaudio(null);
     setDialogvideo(null);
@@ -169,6 +172,7 @@ const App = () => {
         handleGridCellClick(
           item.title,
           item.text,
+          item.text2,
           item.images,
           item.audio,
           item.video
@@ -211,7 +215,8 @@ const App = () => {
           <TabPane tab="文字" key="text">
             <div className="scrollable-content">
               <Text>
-                <pre className="text-container">{dialogText}</pre>
+                <div className="text-container">{dialogText}</div>
+                {dialogText2 &&(<pre>{dialogText2}</pre>)}
               </Text>
             </div>
           </TabPane>

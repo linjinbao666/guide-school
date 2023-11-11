@@ -84,6 +84,10 @@ pre{
   text-indent: 0;
 }
 
+.text2-container {
+  white-space: pre-wrap;
+}
+
 .audio-player {
   display: flex;
   justify-content: center;
